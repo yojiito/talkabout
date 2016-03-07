@@ -1,0 +1,23 @@
+<div class="contents clearfix">
+ <div class="result">
+              <header class="headr">
+                <h3 class="text-middle">
+                  <i class="icon-movie color-gray-light"></i>検索結果
+                </h3>
+              </header><br>
+              
+              <div class="lecture_result">
+                <% @lectures.each do |lecture| %>
+                  <div>
+                  <%= lecture.date %>
+                  </div>
+                  <div>
+                  <h4><a href="/lectures/<%= lecture.id %>" title="<%= lecture.title %>">
+                   <%= lecture.title %></a></h4>
+                  </div>
+                <% end %>
+                     </div><br>
+                    <%= paginate(@lectures) %>
+              
+            </div>
+          </div>

@@ -1,0 +1,18 @@
+<div class="top_page">
+    <div class="contents clearfix">
+     <div class="left-content">
+     </div>
+       
+      <div class="right-content">
+        <%= paginate(@lectures) %>
+       <ul>
+        <% @lectures.each do |lecture| %>
+        <%= render partial: "lecture", locals: { lecture: lecture } %>
+        <% end %>
+       </ul>
+        <%= paginate(@lectures) %>
+       </div>
+    </div>
+</div>
+
+

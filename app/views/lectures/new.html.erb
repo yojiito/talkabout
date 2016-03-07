@@ -1,0 +1,35 @@
+ <div class="contents clearfix">
+ <div class="left-content">
+              <h3 class="text-middle">
+                <i class="icon-movie color-gray-light"></i>講演情報を掲載する
+              </h3>
+         <%= form_for(@lecture) do |f| %>
+          <div style="margin: 5px 0">
+            <%= f.label :主催者名, style: { 'margin-right' => 8 } %>
+            <%= f.text_field :nickname, placeholder: '主催者名', value: '' %>
+          </div>
+          <div style="margin: 5px 0">
+            <%= f.label :講演名, style: { 'margin-right' => 8 } %>
+            <%= f.text_field :title, placeholder: '講演名', max: 30, min: 1, html: { class: "search__query", style: 'text-align: right;' } %>
+          </div>
+          <div style="margin: 5px 0">
+            <%= f.text_area :date, placeholder: '日時', style: 'width: 30%;height: 15px;' %>
+          </div>
+           <div style="margin: 5px 0">
+            <%= f.text_area :place, placeholder: '会場', style: 'width: 30%;height: 15px;' %>
+          </div>
+           <div style="margin: 5px 0">
+            <%= f.text_area :detail, placeholder: '概要', style: 'width: 50%;height: 50px;' %>
+          </div>
+          <div class="row">
+            <div class="col10 push1">
+              <%= button_tag type: "submit", class: "btn btn--block" do %>
+              掲載する<i class="icon-arrow-right"></i>
+              <% end %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+ 
+    

@@ -1,0 +1,13 @@
+  <div class="contents row">
+    <%= form_tag("/lectures/#{@lecture.id}", method: :patch ) do %>
+      <h4>
+        投稿した講演情報を編集する
+      </h4>
+      <input placeholder="Image Url" type="text" name="image" value="<%= @lecture.image_url %>" autofocus="true"><br>
+      <textarea cols="30" name="text" placeholder="タイトル" rows="3"><%= @lecture.title %></textarea>
+      <textarea cols="20" name="text" placeholder="日時" rows="3"><%= @lecture.date %></textarea>
+      <textarea cols="20" name="text" placeholder="会場" rows="3"><%= @lecture.place %></textarea><br>
+      <textarea cols="79" name="text" placeholder="概要" rows="3"><%= @lecture.detail %></textarea>
+      <input type="submit" value="SENT">
+    <% end %>
+  </div>

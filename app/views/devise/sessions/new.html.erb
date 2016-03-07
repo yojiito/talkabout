@@ -1,0 +1,27 @@
+  <div class="contents clearfix">
+    <div class="left-content">
+      <div class="form_box">
+        
+        <h4><span>ログイン</span></h4>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div>
+            <%= f.email_field :email, autofocus: true, :placeholder => 'メールアドレスを入力' %>
+          </div>
+          <div>
+            <%= f.password_field :password, autocomplete: "off", :placeholder => 'パスワードを入力' %>
+          </div>
+          <div class="row">
+            <% if devise_mapping.rememberable? -%>
+              <div class="col-xs-6"><%= f.check_box :remember_me %> <%= f.label :パスワードを記憶 %></div>
+            <% end %>
+            <div class="submit"><%= f.submit "ログイン" %></div>
+          </div>
+        <% end %>
+        <div class="more_link_box">
+        <p>まだアカウントを持っていませんか？</p>
+        <p>パスワードを忘れましたか？</p>
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+    </div>
+  </div>

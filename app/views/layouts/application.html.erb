@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>トークアバウト</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+   <header class="header header--section">
+  <div class="heading">
+          <div class="menu">
+             <ul class="logo" style="float: left">
+              <a href="/"><img src="images/logo_400.400.jpg" alt="Talkabout"></a>
+             </ul>
+
+
+                <ul class="nav" style="float: right">
+                <% if user_signed_in? %>
+              
+                <li>
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+                </li>
+                <li>
+                  <a href="/users/<%= current_user.id %>">マイページ</a>
+                </li>
+                  <li>
+                  <%= link_to "会員情報変更", "/users/:id/edit" , method: :get %>
+                </li>
+                 <li>
+                  <a href="/lectures/new">講演情報を掲載する</a>
+                </li>
+
+                <% else %>
+                 <li>
+                  <%= link_to "ログイン", new_user_session_path, method: :get %>
+                </li>
+                 <li>
+                  <%= link_to "無料会員登録", new_user_registration_path, method: :get %>
+                </li>
+                <li>
+                  <a class="post" href="/lectures/new">講演情報を掲載する</a><span>(要ログイン)</span>
+                </li>
+                <% end %>
+                  </ul>
+
+      <table class="seek" style="float:right">
+      <tr>
+      <td>
+     <h4 class="text-middle">講演名で検索</h4>
+      </td>
+      <td>
+      <%= form_tag('/lectures/search', method: :get) do %>
+     <input class="search" name="keyword" placeholder="講演名で検索" type="text" value=""><button class="btn-search" title="検索" type="submit"><i class="icon-search"></i></button></input>
+     <% end %>
+     <form accept-charset="utf-8" action="/" class="js-search-submit" method="get">
+     </form>
+     </td>
+     </tr>
+     </table>
+          </div><br>
+
+    
+   </div>
+      </header>
+
+<%= yield %>
+
+<footer>
+<table>
+<tr class="footer" style="float: center">
+  <td class="footer1"><p><a href="">運営会社</a></p></td>
+  <td class="footer"><p><a href="">プライバシーポリシー</a></p></td>
+</tr>
+</footer>
+</body>
+</html>

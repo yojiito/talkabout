@@ -1,0 +1,41 @@
+
+<div class="contents clearfix">
+    <div class="left-content">
+      <div class="form_box">
+        <h4><span>新規登録</span></h4>
+
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+
+          <div class="label"><%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, :placeholder => 'メールアドレスを入力' %></div>
+
+          <div class="label"><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
+          <%= f.password_field :password, autocomplete: "off", :placeholder => 'パスワードを入力' %></div>
+
+          <div class="label"><%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off", :placeholder => 'パスワードを入力（確認）' %></div>
+
+           <div class="label"><%= f.label :nickname %><br />
+          <%= f.text_field :nickname, placeholder: '団体名、会社名を入力(必須）' %></div>
+          <div class="field">
+          <%= f.file_field :avatar %>
+          </div>
+
+          <div class="submit">
+          <div class="actions">
+          <%= f.submit %>
+          </div></div>
+
+          <div class="more_link_box">
+          <p>すでにアカウントを持っていますか？</p>
+          <%= render "devise/shared/links" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+        <div class="right-content">
+        </div>
+
+  </div>

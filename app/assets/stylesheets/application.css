@@ -4,11 +4,11 @@ html {
 
 body {
   height: 100%;
-  background-color: #f8f6ff;
+  background-color: black;
   font-size: 14px;
   color: #333;
   margin: 0 auto;
-  opacity: 1;
+  opacity: 0.4;
 }
 h1,h2,h3,h4,h5,h6,p {
   line-height: 1.77;

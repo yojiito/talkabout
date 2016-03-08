@@ -93,8 +93,7 @@ ul li {
 }
 
 .seek {
-  margin: 5px 0px;
-  line-height: 5px;
+  margin: 5px 0;
 }
 
 .lecture_result {

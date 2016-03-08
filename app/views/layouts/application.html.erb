@@ -13,13 +13,12 @@
   <div class="heading">
           <div class="menu">
              <ul class="logo" style="float: left">
-              <a href="/"><img src="images/logo_400.400.jpg" alt="Talkabout"></a>
+               <li><h5>講演会・トークショーの開催情報がわかる！トークアバウト</h5></li>
+               <li><a href="/"><img src="" alt="Talkabout"></a></li>
              </ul>
-
 
                 <ul class="nav" style="float: right">
                 <% if user_signed_in? %>
-              
                 <li>
                   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
                 </li>
@@ -44,22 +43,14 @@
                   <a class="post" href="/lectures/new">講演情報を掲載する</a><span>(要ログイン)</span>
                 </li>
                 <% end %>
-                  </ul>
 
-      <table class="seek" style="float:right">
-      <tr>
-      <td>
-     <h4 class="text-middle">講演名で検索</h4>
-      </td>
-      <td>
-      <%= form_tag('/lectures/search', method: :get) do %>
-     <input class="search" name="keyword" placeholder="講演名で検索" type="text" value=""><button class="btn-search" title="検索" type="submit"><i class="icon-search"></i></button></input>
-     <% end %>
-     <form accept-charset="utf-8" action="/" class="js-search-submit" method="get">
-     </form>
-     </td>
-     </tr>
-     </table>
+                <li><%= form_tag('/lectures/search', method: :get) do %>
+                <input class="search" name="keyword" placeholder="講演名で検索" type="text" value=""><button class="btn-search" title="検索" type="submit"><i class="icon-search"></i></button></input>
+                <% end %>
+               <form accept-charset="utf-8" action="/" class="js-search-submit" method="get">
+               </form></li>
+                </ul>
+
           </div><br>
     
    </div>
